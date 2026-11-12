@@ -16,10 +16,10 @@ mesh="n_16"
 
 CASE_FILE="${casename}.case"
 
-MESH_FILE="/nobackup/proj/disk/kthmech/personal/<user>/meshes/${mesh}.nmsh"
-OUTPUT_DIR="/nobackup/proj/disk/kthmech/personal/<user>/runs/${mesh}/${casename}/"
-LOG_DIR="/nobackup/proj/disk/kthmech/personal/<user>/runs/${mesh}/logfiles/"
-CLEAN_SCRIPT=""                          # TODO: path to clean_csv.sh on Arrhenius, or leave empty to skip
+MESH_FILE="meshes/${mesh}.nmsh"
+OUTPUT_DIR="/nobackup/proj/disk/abl-simulations/personal/ldl/SIM_DIR/output/${mesh}/${casename}/"
+LOG_DIR="/nobackup/proj/disk/abl-simulations/personal/ldl/SIM_DIR/output/${mesh}/logfiles/"
+CLEAN_SCRIPT="/home/ldl/scripts/clean_csv.sh"                          # TODO: path to clean_csv.sh on Arrhenius, or leave empty to skip
 
 # Executable: use ONE of the two.
 NEKO_EXEC="neko_${casename}"             # user executable built with makeneko, in the submit directory
