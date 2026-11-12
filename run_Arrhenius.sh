@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #SBATCH --job-name=test_00
 #SBATCH --account=naiss2026-3-667-gpu    # or naiss2026-1-3-gpu (Bolin)     
 #SBATCH --time=00:45:00                  # or naiss2025-3-39-gpu (KTH)
@@ -19,7 +18,7 @@ CASE_FILE="${casename}.case"
 MESH_FILE="meshes/${mesh}.nmsh"
 OUTPUT_DIR="/nobackup/proj/disk/abl-simulations/personal/ldl/SIM_DIR/output/${mesh}/${casename}/"
 LOG_DIR="/nobackup/proj/disk/abl-simulations/personal/ldl/SIM_DIR/output/${mesh}/logfiles/"
-CLEAN_SCRIPT="/home/ldl/scripts/clean_csv.sh"                          # TODO: path to clean_csv.sh on Arrhenius, or leave empty to skip
+CLEAN_SCRIPT="/home/ldl/scripts/clean_csv.sh"                         
 
 # Executable: use ONE of the two.
 NEKO_EXEC="neko_${casename}"             # user executable built with makeneko, in the submit directory
