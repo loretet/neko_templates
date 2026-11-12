@@ -15,7 +15,7 @@ mesh="n_16"
 
 CASE_FILE="${casename}.case"
 
-MESH_FILE="meshes/${mesh}.nmsh"
+MESH_FILE="/nobackup/proj/disk/abl-simulations/personal/ldl/meshes/${mesh}.nmsh"
 OUTPUT_DIR="/nobackup/proj/disk/abl-simulations/personal/ldl/SIM_DIR/output/${mesh}/${casename}/"
 LOG_DIR="/nobackup/proj/disk/abl-simulations/personal/ldl/SIM_DIR/output/${mesh}/logfiles/"
 CLEAN_SCRIPT="/home/ldl/scripts/clean_csv.sh"                         
