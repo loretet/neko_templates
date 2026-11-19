@@ -41,7 +41,8 @@ echo "  Neko Executable: $NEKO_EXEC"
 echo "  Output Directory: $OUTPUT_DIR"
 
 # Modules: must match the environment the executable was built with
-ml GPU/buildenv-gcccuda/2026.03-cu13.0
+module reset
+ml GPU/buildenv-gcccuda/2026.03-cu13.0 GPU/buildtool-easybuild/5.2.1-hpca3ef7d197 GCC/14.3.0 MPICH/4.3.2-CUDA-12.9.1 HDF5/1.14.6
 # load JSON-Fortran
 source /nobackup/proj/disk/kthmech/shared/software/json-fortran/install/GPU_buildenv-gcccuda_2026.03-cu13.0/env.sh
 
@@ -78,7 +79,7 @@ sed -i "s|\"output_directory\":.*|\"output_directory\": \"$OUTPUT_DIR\",|g" "$CA
 sed -i "s|\"mesh_file\":.*|\"mesh_file\": \"$MESH_FILE\",|g" "$CASE_FILE"
 sed -i "s|\"job_timelimit\":.*|\"job_timelimit\": \"$SBATCH_TIME\",|g" "$CASE_FILE"
 
-srun --unbuffered ./select_gpu ${NEKO_EXEC} ${CASE_FILE} > "${LOG_DIR}/log.run_${casename}" 2>&1
+srun --unbuffered ./select_gpu ./${NEKO_EXEC} ${CASE_FILE} > "${LOG_DIR}/log.run_${casename}" 2>&1
 
 rm -f ./select_gpu
 mv *0.* "${OUTPUT_DIR}"
